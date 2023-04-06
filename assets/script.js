@@ -7,11 +7,25 @@ var lettersLower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o',
 
 var lettersUpper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
-var specialChars = ['!','@','#','$','%','^','&','*','(',')','=','+','-','?','~','/'];
+var symbols = ['!','@','#','$','%','^','&','*','(',')','=','+','-','?','~','/'];
 
 var maximumPassword = 128
 
 var minimumPassword = 8
+
+
+var sizePassword = prompt("Choose a number between 8 and 128 for password length:");
+  if(sizePassword < minimumPassword || sizePassword > maximumPassword){
+    alert("Must be a valid number between 8 and 128. Please try again.")
+  }
+
+numbers = prompt("Should this password contain numbers? Click okay for yes, cancel for no.");
+
+symbols = prompt("Should this password contain symbols(!,@,$)? Click okay for yes, cancel for no.");
+
+lettersLower = prompt("Should this password contain lowercase letters? Click okay for yes, cancel for no.")
+
+lettersUpper = prompt("Should this password contain uppercase letters? Click okay for yes, cancel for no.")
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
